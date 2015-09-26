@@ -1,0 +1,42 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//CVTerms.json",
+	"title":"CVTerms",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"CVTerms"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"Definition":{
+					"title":"Definition",
+					"type":"string"
+				},
+				"ODMVocabulary":{
+					"title":"ODMVocabulary",
+					"type":"string",
+					"required":true
+				},
+				"SourceVocabulary":{
+					"title":"SourceVocabulary",
+					"type":"string"
+				},
+				"Term":{
+					"title":"Term",
+					"type":"string",
+					"required":true
+				},
+				"TermID":{
+					"title":"TermID",
+					"type":"integer",
+					"required":true
+				}
+			}
+		}
+	}
+}

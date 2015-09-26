@@ -1,0 +1,41 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//RelatedActions.json",
+	"title":"RelatedActions",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"RelatedActions"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"RelationID":{
+					"title":"RelationID",
+					"type":"integer",
+					"required":true
+				},
+				"RelationshipTypeCV":{
+					"title":"RelationshipTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"RelatedActionID":{
+					"title":"RelatedActionID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"ActionID":{
+					"title":"ActionID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//SpecimenTaxonomicClassifiers.json",
+	"title":"SpecimenTaxonomicClassifiers",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"SpecimenTaxonomicClassifiers"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"BridgeID":{
+					"title":"BridgeID",
+					"type":"integer",
+					"required":true
+				},
+				"CitationID":{
+					"title":"CitationID",
+					"type":"integer"
+				},
+				"TaxonomicClassifierID":{
+					"title":"TaxonomicClassifierID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"SamplingFeatureID":{
+					"title":"SamplingFeatureID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

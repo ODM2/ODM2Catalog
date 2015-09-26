@@ -1,0 +1,45 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//RelatedDatasets.json",
+	"title":"RelatedDatasets",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"RelatedDatasets"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"RelationID":{
+					"title":"RelationID",
+					"type":"integer",
+					"required":true
+				},
+				"RelationshipTypeCV":{
+					"title":"RelationshipTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"VersionCode":{
+					"title":"VersionCode",
+					"type":"string"
+				},
+				"RelatedDatasetID":{
+					"title":"RelatedDatasetID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"DataSetID":{
+					"title":"DataSetID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

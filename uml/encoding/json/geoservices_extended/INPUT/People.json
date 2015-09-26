@@ -1,0 +1,38 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//People.json",
+	"title":"People",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"People"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"PersonFirstName":{
+					"title":"PersonFirstName",
+					"type":"string",
+					"required":true
+				},
+				"PersonID":{
+					"title":"PersonID",
+					"type":"integer",
+					"required":true
+				},
+				"PersonLastName":{
+					"title":"PersonLastName",
+					"type":"string",
+					"required":true
+				},
+				"PersonMiddleName":{
+					"title":"PersonMiddleName",
+					"type":"string"
+				}
+			}
+		}
+	}
+}

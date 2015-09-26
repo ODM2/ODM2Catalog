@@ -1,0 +1,37 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//ProcessingLevels.json",
+	"title":"ProcessingLevels",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"ProcessingLevels"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"Definition":{
+					"title":"Definition",
+					"type":"string"
+				},
+				"Explanation":{
+					"title":"Explanation",
+					"type":"string"
+				},
+				"ProcessingLevelCode":{
+					"title":"ProcessingLevelCode",
+					"type":"string",
+					"required":true
+				},
+				"ProcessingLevelID":{
+					"title":"ProcessingLevelID",
+					"type":"integer",
+					"required":true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,86 @@
+<ShapeChangeConfiguration xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 http://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd">
+<input>
+<parameter name="inputModelType" value="EA7"/>
+<parameter name="inputFile" value="D:/dev_odm/ODMCatalog/uml/odm2_uml.EAP"/>
+<parameter name="appSchemaName" value="ODM2Catalog"/>
+
+<parameter name="publicOnly" value="true"/>
+<parameter name="checkingConstraints" value="disabled"/>
+<parameter name="sortedSchemaOutput" value="true"/>
+<xi:include href="http://shapechange.net/resources/config/StandardAliases.xml"/>
+<!-- <packages>
+<PackageInfo packageName="odm2" ns="uri:UCHIC/ODM2" nsabr="odm2" xsdDocument="odm2.xsd" version="1.0"/>
+</packages>
+-->
+</input>
+<log>
+<parameter name="reportLevel" value="INFO"/>
+<parameter name="logFile" value="D:/dev_odm/ODMCatalog/uml/log_JsonGsrExtended.xml"/>
+</log>
+<targets>
+
+<TargetXmlSchema class="de.interactive_instruments.ShapeChange.Target.XmlSchema.XmlSchema" mode="enabled">
+<targetParameter name="outputDirectory" value="D:/dev_odm/ODMCatalog/uml/encoding/xsd" />
+<targetParameter name="defaultEncodingRule" value="iso19136_2007_INSPIRE_Extensions" />
+
+<xi:include href="http://shapechange.net/resources/config/StandardRules.xml" />
+<xi:include href="http://shapechange.net/resources/config/StandardNamespaces.xml" />
+<xi:include href="http://shapechange.net/resources/config/StandardMapEntries.xml" />
+<xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19156.xml" />
+<xsdMapEntries>
+<XsdMapEntry type="Percentage" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:MeasureType" xmlType="gml:MeasureType" xmlTypeContent="simple" xmlTypeNilReason="false" />
+<XsdMapEntry type="URI" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple" />
+<XsdMapEntry type="URL" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple" />
+<XsdMapEntry type="FC_FeatureType" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple" />
+<XsdMapEntry type="AbstractFeature" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:AbstractFeatureType" xmlElement="gml:AbstractFeature" xmlPropertyType="gml:FeaturePropertyType" />
+<XsdMapEntry type="OM_Process" xsdEncodingRules="*" xmlType="gml:AbstractFeatureType" xmlElement="gml:AbstractFeature" xmlPropertyType="om:OM_ProcessPropertyType" />
+</xsdMapEntries>
+<xmlNamespaces>
+ <XmlNamespace nsabr="odm2" ns="urn:org.criticalzone:odm:v2" />
+</xmlNamespaces>
+</TargetXmlSchema>
+
+
+<!-- <Target class="de.interactive_instruments.ShapeChange.Target.SQL.SqlDdl" inputs="step2"
+  mode="enabled"> -->
+  
+<Target class="de.interactive_instruments.ShapeChange.Target.SQL.SqlDdl" 
+  mode="enabled">
+  <targetParameter name="defaultEncodingRule" value="sql"/>
+  <targetParameter name="outputDirectory" value="D:/dev_odm/ODMCatalog/uml/encoding/json/geoservices_extended"/>
+  <targetParameter name="size" value="-1"/>
+  <targetParameter name="srid" value="31467"/>
+  <targetParameter name="createReferences" value="true"/>
+  <targetParameter name="createDocumentation" value="true"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardSqlMapEntries-PostgreSQL.xml"/>
+</Target>
+
+<Target class="de.interactive_instruments.ShapeChange.Target.JSON.JsonSchema" mode="enabled">
+<targetParameter name="outputDirectory" value="D:/dev_odm/ODMCatalog/uml/encoding/json/geoservices_extended"/>
+<targetParameter name="defaultEncodingRule" value="geoservices_extended"/>
+<xi:include href="http://shapechange.net/resources/config/StandardJsonMapEntries.xml"/>
+</Target>
+
+
+
+<Target class="de.interactive_instruments.ShapeChange.Target.Codelists.CodelistDictionaries" mode="enabled">
+<targetParameter name="outputDirectory" value="D:/dev_odm/ODMCatalog/uml/ODM2 Schema Mappings/uml/encoding/cl" />
+<targetParameter name="enumerations" value="false" />
+</Target>
+<Target class="de.interactive_instruments.ShapeChange.Target.FeatureCatalogue.FeatureCatalogue" mode="enabled">
+<targetParameter name="outputDirectory" value="D:/dev_odm/ODMCatalog/uml/encoding/fc" />
+<targetParameter name="outputFilename" value="fc_annex1" />
+<targetParameter name="outputFormat" value="HTML" />
+<targetParameter name="name" value="'INSPIRE application schemas'" />
+<targetParameter name="scope" value="This feature catalogue gives an informative overview of the spatial object types and data types defined in the INSPIRE data specifications. These types are used by data providers for the exchange and classification of spatial objects from data sets that relate to one or several INSPIRE spatial data themes.[NEWLINE]For the normative requirements, please refer to the &lt;a href='http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:323:0011:0102:EN:PDF'>COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 on the interoperability of spatial data sets and services&lt;/a>. For a more detailed description of the application schemas, see the data specification guidance documents at &lt;a href='http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2'>http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2&lt;/a>." />
+<targetParameter name="versionNumber" value="n/a (each application schema is versioned separately)" />
+<targetParameter name="versionDate" value="April 2010" />
+<targetParameter name="producer" value="European Commission, INSPIRE Drafting Team 'Data Specifications' and Thematic Working Groups" />
+<targetParameter name="xsltPfad" value="http://shapechange.net/resources/xslt" />
+<targetParameter name="xslhtmlFile" value="html.xsl" />
+<targetParameter name="featureTerm" value="Spatial Object" />
+</Target>
+
+<!-- -->
+</targets>
+</ShapeChangeConfiguration>

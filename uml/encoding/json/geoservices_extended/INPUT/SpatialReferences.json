@@ -1,0 +1,37 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//SpatialReferences.json",
+	"title":"SpatialReferences",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"SpatialReferences"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"SpatialReferenceID":{
+					"title":"SpatialReferenceID",
+					"type":"integer",
+					"required":true
+				},
+				"SRSCode":{
+					"title":"SRSCode",
+					"type":"string"
+				},
+				"SRSDescription":{
+					"title":"SRSDescription",
+					"type":"string"
+				},
+				"SRSName":{
+					"title":"SRSName",
+					"type":"string",
+					"required":true
+				}
+			}
+		}
+	}
+}

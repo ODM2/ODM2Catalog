@@ -1,0 +1,48 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//TaxonomicClassifiers.json",
+	"title":"TaxonomicClassifiers",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"TaxonomicClassifiers"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"TaxonomicClassifierCommonName":{
+					"title":"TaxonomicClassifierCommonName",
+					"type":"string"
+				},
+				"TaxonomicClassifierDescription":{
+					"title":"TaxonomicClassifierDescription",
+					"type":"string"
+				},
+				"TaxonomicClassifierID":{
+					"title":"TaxonomicClassifierID",
+					"type":"integer",
+					"required":true
+				},
+				"TaxonomicClassifierName":{
+					"title":"TaxonomicClassifierName",
+					"type":"string",
+					"required":true
+				},
+				"TaxonomicClassifierTypeCV":{
+					"title":"TaxonomicClassifierTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"ParentTaxonomicClassifierID":{
+					"title":"ParentTaxonomicClassifierID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

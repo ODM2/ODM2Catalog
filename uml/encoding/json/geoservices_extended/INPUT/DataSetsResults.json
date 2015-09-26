@@ -1,0 +1,36 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//DataSetsResults.json",
+	"title":"DataSetsResults",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"DataSetsResults"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"BridgeID":{
+					"title":"BridgeID",
+					"type":"integer",
+					"required":true
+				},
+				"DataSetID":{
+					"title":"DataSetID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"ResultID":{
+					"title":"ResultID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

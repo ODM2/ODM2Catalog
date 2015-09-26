@@ -1,0 +1,36 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//FeatureActions.json",
+	"title":"FeatureActions",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"FeatureActions"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"FeatureActionID":{
+					"title":"FeatureActionID",
+					"type":"integer",
+					"required":true
+				},
+				"SamplingFeatureID":{
+					"title":"SamplingFeatureID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"ActionID":{
+					"title":"ActionID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

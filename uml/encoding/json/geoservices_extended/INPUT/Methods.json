@@ -1,0 +1,53 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//Methods.json",
+	"title":"Methods",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"Methods"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"MethodCode":{
+					"title":"MethodCode",
+					"type":"string",
+					"required":true
+				},
+				"MethodDescription":{
+					"title":"MethodDescription",
+					"type":"string"
+				},
+				"MethodID":{
+					"title":"MethodID",
+					"type":"integer",
+					"required":true
+				},
+				"MethodLink":{
+					"title":"MethodLink",
+					"type":"string"
+				},
+				"MethodName":{
+					"title":"MethodName",
+					"type":"string",
+					"required":true
+				},
+				"MethodTypeCV":{
+					"title":"MethodTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"OrganizationID":{
+					"title":"OrganizationID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

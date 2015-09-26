@@ -1,0 +1,46 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//ActionBy.json",
+	"title":"ActionBy",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"ActionBy"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"BridgeID":{
+					"title":"BridgeID",
+					"type":"integer",
+					"required":true
+				},
+				"IsActionLead":{
+					"title":"IsActionLead",
+					"type":"string",
+					"enum":["zero","one"],
+					"required":true
+				},
+				"RoleDescription":{
+					"title":"RoleDescription",
+					"type":"string"
+				},
+				"AffiliationID":{
+					"title":"AffiliationID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"ActionID":{
+					"title":"ActionID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

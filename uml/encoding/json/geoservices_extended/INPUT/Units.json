@@ -1,0 +1,39 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//Units.json",
+	"title":"Units",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"Units"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"UnitsAbbreviation":{
+					"title":"UnitsAbbreviation",
+					"type":"string",
+					"required":true
+				},
+				"UnitsID":{
+					"title":"UnitsID",
+					"type":"integer",
+					"required":true
+				},
+				"UnitsName":{
+					"title":"UnitsName",
+					"type":"string",
+					"required":true
+				},
+				"UnitsTypeCV":{
+					"title":"UnitsTypeCV",
+					"type":"string",
+					"required":true
+				}
+			}
+		}
+	}
+}

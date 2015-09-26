@@ -1,0 +1,43 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//catalogHarvest.json",
+	"title":"catalogHarvest",
+	"description":"keep value counts, statistics, and harvest times",
+	"type":"object",
+	"properties":{
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"runDate":{
+					"title":"runDate",
+					"type":"string",
+					"format":"date-time",
+					"required":true
+				},
+				"comment":{
+					"title":"comment",
+					"type":"string"
+				},
+				"success":{
+					"title":"success",
+					"description":"Was run successful",
+					"type":"boolean",
+					"required":true
+				},
+				"valuecount":{
+					"title":"valuecount",
+					"type":"integer",
+					"required":true
+				},
+				"property":{
+					"title":"property",
+					"type":"array",
+					"items":{
+						"$ref":"FIXME/om/NamedValue.json"
+					}
+				}
+			}
+		}
+	}
+}

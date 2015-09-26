@@ -1,0 +1,55 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//SpatialOffsets.json",
+	"title":"SpatialOffsets",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"SpatialOffsets"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"Offset1UnitID":{
+					"title":"Offset1UnitID",
+					"type":"integer",
+					"required":true
+				},
+				"Offset1Value":{
+					"title":"Offset1Value",
+					"type":"number",
+					"required":true
+				},
+				"Offset2UnitID":{
+					"title":"Offset2UnitID",
+					"type":"integer"
+				},
+				"Offset2Value":{
+					"title":"Offset2Value",
+					"type":"number"
+				},
+				"Offset3UnitID":{
+					"title":"Offset3UnitID",
+					"type":"integer"
+				},
+				"Offset3Value":{
+					"title":"Offset3Value",
+					"type":"number"
+				},
+				"SpatialOffsetID":{
+					"title":"SpatialOffsetID",
+					"type":"integer",
+					"required":true
+				},
+				"SpatialOffsetTypeCV":{
+					"title":"SpatialOffsetTypeCV",
+					"type":"string",
+					"required":true
+				}
+			}
+		}
+	}
+}

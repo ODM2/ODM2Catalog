@@ -1,0 +1,57 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//SamplingFeatures.json",
+	"title":"SamplingFeatures",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"SamplingFeatures"
+		},
+		"geometry":{
+			"$ref":"http://schemas.opengis.net/gsr/1.0/point.json"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"Elevation_m":{
+					"title":"Elevation_m",
+					"type":"number"
+				},
+				"ElevationDatumcCV":{
+					"title":"ElevationDatumcCV",
+					"type":"string"
+				},
+				"SamplingFeatureCode":{
+					"title":"SamplingFeatureCode",
+					"type":"string",
+					"required":true
+				},
+				"SamplingFeatureDescription":{
+					"title":"SamplingFeatureDescription",
+					"type":"string"
+				},
+				"SamplingFeatureGeotypeCV":{
+					"title":"SamplingFeatureGeotypeCV",
+					"type":"string"
+				},
+				"SamplingFeatureID":{
+					"title":"SamplingFeatureID",
+					"type":"integer",
+					"required":true
+				},
+				"SamplingFeatureName":{
+					"title":"SamplingFeatureName",
+					"type":"string"
+				},
+				"SamplingFeatureTypeCV":{
+					"title":"SamplingFeatureTypeCV",
+					"type":"string",
+					"required":true
+				}
+			}
+		}
+	}
+}

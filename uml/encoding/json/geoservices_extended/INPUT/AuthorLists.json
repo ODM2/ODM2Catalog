@@ -1,0 +1,41 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//AuthorLists.json",
+	"title":"AuthorLists",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"AuthorLists"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"AuthorOrder":{
+					"title":"AuthorOrder",
+					"type":"integer",
+					"required":true
+				},
+				"BridgeID":{
+					"title":"BridgeID",
+					"type":"integer",
+					"required":true
+				},
+				"PersonID":{
+					"title":"PersonID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"CitationID":{
+					"title":"CitationID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//Sites.json",
+	"title":"Sites",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"Sites"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"Latitude":{
+					"title":"Latitude",
+					"type":"number",
+					"required":true
+				},
+				"Longitude":{
+					"title":"Longitude",
+					"type":"number",
+					"required":true
+				},
+				"SiteTypeCV":{
+					"title":"SiteTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"SamplingFeatureID":{
+					"title":"SamplingFeatureID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"LatLonDatumID":{
+					"title":"LatLonDatumID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//RelatedResults.json",
+	"title":"RelatedResults",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"RelatedResults"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"RelatedResultSequenceNumber":{
+					"title":"RelatedResultSequenceNumber",
+					"type":"integer"
+				},
+				"RelationID":{
+					"title":"RelationID",
+					"type":"integer",
+					"required":true
+				},
+				"RelationshipTypeCV":{
+					"title":"RelationshipTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"VersionCode":{
+					"title":"VersionCode",
+					"type":"string"
+				},
+				"ResultID":{
+					"title":"ResultID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"RelatedResultID":{
+					"title":"RelatedResultID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

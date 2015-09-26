@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0" elementFormDefault="qualified" targetNamespace="http://ciritalzone.org/odm2/catalog" version="" xmlns:="http://ciritalzone.org/odm2/catalog">
+  <include schemaLocation="odmcatalog"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>
+  <import namespace="http://www.opengis.net/sampling/2.0" schemaLocation="http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="ActionAnnotations" substitutionGroup=":Annotations" type=":ActionAnnotationsType"/>
+  <complexType name="ActionAnnotationsType">
+    <complexContent>
+      <extension base=":AnnotationsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="ActionID" type=":ActionsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ActionAnnotationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ActionAnnotations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ActionBy" substitutionGroup="gml:AbstractFeature" type=":ActionByType"/>
+  <complexType name="ActionByType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="IsActionLead" type="boolean"/>
+          <element minOccurs="0" name="RoleDescription" type="string"/>
+          <element name="AffiliationID" type=":AffiliationsPropertyType"/>
+          <element name="ActionID" type=":ActionsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ActionByPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ActionBy"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ActionExtensionPropertyValues" substitutionGroup=":ExtensionProperties" type=":ActionExtensionPropertyValuesType"/>
+  <complexType name="ActionExtensionPropertyValuesType">
+    <complexContent>
+      <extension base=":ExtensionPropertiesType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="PropertyValue" type="string"/>
+          <element name="ActionID" type=":ActionsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ActionExtensionPropertyValuesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ActionExtensionPropertyValues"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Actions" substitutionGroup="gml:AbstractFeature" type=":ActionsType"/>
+  <complexType name="ActionsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="ActionDescription" type="string"/>
+          <element minOccurs="0" name="ActionFileLink" type="string"/>
+          <element name="ActionID" type="integer"/>
+          <element name="ActionTypeCV" type="string"/>
+          <element name="BeginDateTime" type="dateTime"/>
+          <element name="BeginDateTimeUTCOffset" type="integer"/>
+          <element minOccurs="0" name="EndDateTime" type="dateTime"/>
+          <element minOccurs="0" name="EndDateTimeUTCOffset" type="integer"/>
+          <element name="MethodID" type=":MethodsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ActionsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Actions"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Affiliations" substitutionGroup="gml:AbstractFeature" type=":AffiliationsType"/>
+  <complexType name="AffiliationsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="AffiliationEndDate" type="date"/>
+          <element name="AffiliationID" type="integer"/>
+          <element name="AffiliationStartDate" type="date"/>
+          <element minOccurs="0" name="IsPrimaryOrganizationContact" type="boolean"/>
+          <element minOccurs="0" name="PersonLink" type="string"/>
+          <element minOccurs="0" name="PrimaryAddress" type="string"/>
+          <element name="PrimaryEmail" type="string"/>
+          <element minOccurs="0" name="PrimaryPhone" type="string"/>
+          <element name="PersonID" type=":PeoplePropertyType"/>
+          <element name="OrganizationID" type=":OrganizationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AffiliationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Affiliations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Annotations" substitutionGroup="gml:AbstractGML" type=":AnnotationsType"/>
+  <complexType name="AnnotationsType">
+    <complexContent>
+      <extension base="gml:AbstractGMLType">
+        <sequence>
+          <element minOccurs="0" name="AnnotationCode" type="string"/>
+          <element minOccurs="0" name="AnnotationDateTime" type="dateTime"/>
+          <element name="AnnotationID" type="integer"/>
+          <element minOccurs="0" name="AnnotationLink" type="string"/>
+          <element name="AnnotationText" type="string"/>
+          <element name="AnnotationTypeCV" type="string"/>
+          <element minOccurs="0" name="AnnotationUTCOffset" type="integer"/>
+          <element name="CitationID" type=":CitationsPropertyType"/>
+          <element name="AnnotatorID" type=":PeoplePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AnnotationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Annotations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="AuthorLists" substitutionGroup="gml:AbstractFeature" type=":AuthorListsType"/>
+  <complexType name="AuthorListsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="AuthorOrder" type="integer"/>
+          <element name="BridgeID" type="integer"/>
+          <element name="PersonID" type=":PeoplePropertyType"/>
+          <element name="CitationID" type=":CitationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AuthorListsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":AuthorLists"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CVTerms" substitutionGroup="gml:AbstractFeature" type=":CVTermsType"/>
+  <complexType name="CVTermsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="Definition" type="string"/>
+          <element name="ODMVocabulary" type="string"/>
+          <element minOccurs="0" name="SourceVocabulary" type="string"/>
+          <element name="Term" type="string"/>
+          <element name="TermID" type="integer"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CVTermsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":CVTerms"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CitationExtensionPropertyValues" substitutionGroup=":ExtensionProperties" type=":CitationExtensionPropertyValuesType"/>
+  <complexType name="CitationExtensionPropertyValuesType">
+    <complexContent>
+      <extension base=":ExtensionPropertiesType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="PropertyValue" type="string"/>
+          <element name="CitationID" type=":CitationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CitationExtensionPropertyValuesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":CitationExtensionPropertyValues"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CitationExternalIdentifiers" substitutionGroup=":ExternalIdentifierSystems" type=":CitationExternalIdentifiersType"/>
+  <complexType name="CitationExternalIdentifiersType">
+    <complexContent>
+      <extension base=":ExternalIdentifierSystemsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="CitationExternalIdentifer" type="string"/>
+          <element minOccurs="0" name="CitationExternalIdentiferURI" type="string"/>
+          <element name="CitationID" type=":CitationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CitationExternalIdentifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":CitationExternalIdentifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Citations" substitutionGroup="gml:AbstractFeature" type=":CitationsType"/>
+  <complexType name="CitationsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="CitationID" type="integer"/>
+          <element minOccurs="0" name="CitationLink" type="string"/>
+          <element name="PublicationYear" type="integer"/>
+          <element name="Publisher" type="string"/>
+          <element name="Title" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CitationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Citations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DataSetCitations" substitutionGroup="gml:AbstractFeature" type=":DataSetCitationsType"/>
+  <complexType name="DataSetCitationsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="RelationshipTypeCV" type="string"/>
+          <element name="CitationID" type=":CitationsPropertyType"/>
+          <element name="DataSetID" type=":DataSetsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DataSetCitationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":DataSetCitations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DataSets" substitutionGroup="gml:AbstractFeature" type=":DataSetsType"/>
+  <complexType name="DataSetsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="DataSetAbstract" type="string"/>
+          <element name="DataSetCode" type="string"/>
+          <element name="DataSetID" type="integer"/>
+          <element name="DataSetTitle" type="string"/>
+          <element name="DataSetTypeCV" type="string"/>
+          <element name="DataSetUUID" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DataSetsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":DataSets"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DataSetsResults" substitutionGroup="gml:AbstractFeature" type=":DataSetsResultsType"/>
+  <complexType name="DataSetsResultsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="DataSetID" type=":DataSetsPropertyType"/>
+          <element name="ResultID" type=":ResultPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DataSetsResultsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":DataSetsResults"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ExtensionProperties" substitutionGroup="gml:AbstractFeature" type=":ExtensionPropertiesType"/>
+  <complexType name="ExtensionPropertiesType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="PropertyDataTypeCV" type="string"/>
+          <element minOccurs="0" name="PropertyDescription" type="string"/>
+          <element name="PropertyID" type="integer"/>
+          <element name="PropertyName" type="string"/>
+          <element name="PropertyUnitsID" type=":UnitsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ExtensionPropertiesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ExtensionProperties"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ExternalIdentifierSystems" substitutionGroup="gml:AbstractFeature" type=":ExternalIdentifierSystemsType"/>
+  <complexType name="ExternalIdentifierSystemsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="ExternalIdentifierSystemDescription" type="string"/>
+          <element name="ExternalIdentifierSystemID" type="integer"/>
+          <element name="ExternalIdentifierSystemName" type="string"/>
+          <element minOccurs="0" name="ExternalIdentifierSystemURL" type="string"/>
+          <element name="IdentifierSystemOrganizationID" type=":OrganizationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ExternalIdentifierSystemsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ExternalIdentifierSystems"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FeatureActions" substitutionGroup="gml:AbstractFeature" type=":FeatureActionsType"/>
+  <complexType name="FeatureActionsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="FeatureActionID" type="integer"/>
+          <element name="SamplingFeatureID" type=":SamplingFeaturesPropertyType"/>
+          <element name="ActionID" type=":ActionsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FeatureActionsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":FeatureActions"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="MethodAnnotations" substitutionGroup=":Annotations" type=":MethodAnnotationsType"/>
+  <complexType name="MethodAnnotationsType">
+    <complexContent>
+      <extension base=":AnnotationsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="MethodID" type=":MethodsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MethodAnnotationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":MethodAnnotations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="MethodCitations" substitutionGroup="gml:AbstractFeature" type=":MethodCitationsType"/>
+  <complexType name="MethodCitationsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="RelationshipTypeCV" type="string"/>
+          <element name="MethodID" type=":MethodsPropertyType"/>
+          <element name="CitationID" type=":CitationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MethodCitationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":MethodCitations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="MethodExtensionPropertyValues" substitutionGroup=":ExtensionProperties" type=":MethodExtensionPropertyValuesType"/>
+  <complexType name="MethodExtensionPropertyValuesType">
+    <complexContent>
+      <extension base=":ExtensionPropertiesType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="PropertyValue" type="string"/>
+          <element name="MethodID" type=":MethodsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MethodExtensionPropertyValuesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":MethodExtensionPropertyValues"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="MethodExternalIdentifiers" substitutionGroup=":ExternalIdentifierSystems" type=":MethodExternalIdentifiersType"/>
+  <complexType name="MethodExternalIdentifiersType">
+    <complexContent>
+      <extension base=":ExternalIdentifierSystemsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="MethodExternalIdentifier" type="string"/>
+          <element minOccurs="0" name="MethodExternalIdentifierURI" type="string"/>
+          <element name="MethodID" type=":MethodsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MethodExternalIdentifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":MethodExternalIdentifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Methods" substitutionGroup="gml:AbstractFeature" type=":MethodsType"/>
+  <complexType name="MethodsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="MethodCode" type="string"/>
+          <element minOccurs="0" name="MethodDescription" type="string"/>
+          <element name="MethodID" type="integer"/>
+          <element minOccurs="0" name="MethodLink" type="string"/>
+          <element name="MethodName" type="string"/>
+          <element name="MethodTypeCV" type="string"/>
+          <element name="OrganizationID" type=":OrganizationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MethodsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Methods"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Organizations" substitutionGroup="gml:AbstractFeature" type=":OrganizationsType"/>
+  <complexType name="OrganizationsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="OrganizationCode" type="string"/>
+          <element minOccurs="0" name="OrganizationDescription" type="string"/>
+          <element name="OrganizationID" type="integer"/>
+          <element minOccurs="0" name="OrganizationLink" type="string"/>
+          <element name="OrganizationName" type="string"/>
+          <element name="OrganizationTypeCV" type="string"/>
+          <element name="ParentOrganizationID" type=":OrganizationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OrganizationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Organizations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="People" substitutionGroup="gml:AbstractFeature" type=":PeopleType"/>
+  <complexType name="PeopleType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="PersonFirstName" type="string"/>
+          <element name="PersonID" type="integer"/>
+          <element name="PersonLastName" type="string"/>
+          <element minOccurs="0" name="PersonMiddleName" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PeoplePropertyType">
+    <sequence minOccurs="0">
+      <element ref=":People"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="PersonExternalIdentifiers" substitutionGroup=":ExternalIdentifierSystems" type=":PersonExternalIdentifiersType"/>
+  <complexType name="PersonExternalIdentifiersType">
+    <complexContent>
+      <extension base=":ExternalIdentifierSystemsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element minOccurs="0" name="PersonExternalIdenifierURI" type="string"/>
+          <element name="PersonExternalIdentifier" type="string"/>
+          <element name="PersonID" type=":PeoplePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PersonExternalIdentifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":PersonExternalIdentifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ProcessingLevels" substitutionGroup="gml:AbstractFeature" type=":ProcessingLevelsType"/>
+  <complexType name="ProcessingLevelsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="Definition" type="string"/>
+          <element minOccurs="0" name="Explanation" type="string"/>
+          <element name="ProcessingLevelCode" type="string"/>
+          <element name="ProcessingLevelID" type="integer"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ProcessingLevelsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ProcessingLevels"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ReferenceMaterialExternalIdentifiers" substitutionGroup=":ExternalIdentifierSystems" type=":ReferenceMaterialExternalIdentifiersType"/>
+  <complexType name="ReferenceMaterialExternalIdentifiersType">
+    <complexContent>
+      <extension base=":ExternalIdentifierSystemsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="ReferenceMaterialExternalIdentifier" type="string"/>
+          <element minOccurs="0" name="ReferenceMaterialExternalIdentifierURI" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ReferenceMaterialExternalIdentifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ReferenceMaterialExternalIdentifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RelatedActions" substitutionGroup="gml:AbstractFeature" type=":RelatedActionsType"/>
+  <complexType name="RelatedActionsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="RelationID" type="integer"/>
+          <element name="RelationshipTypeCV" type="string"/>
+          <element name="RelatedActionID" type=":ActionsPropertyType"/>
+          <element name="ActionID" type=":ActionsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RelatedActionsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":RelatedActions"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RelatedCitations" substitutionGroup="gml:AbstractFeature" type=":RelatedCitationsType"/>
+  <complexType name="RelatedCitationsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="RelationID" type="integer"/>
+          <element name="RelationshipTypeCV" type="integer"/>
+          <element name="RelatedCitationID" type=":CitationsPropertyType"/>
+          <element name="CitationID" type=":CitationsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RelatedCitationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":RelatedCitations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RelatedDatasets" substitutionGroup="gml:AbstractFeature" type=":RelatedDatasetsType"/>
+  <complexType name="RelatedDatasetsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="RelationID" type="integer"/>
+          <element name="RelationshipTypeCV" type="string"/>
+          <element minOccurs="0" name="VersionCode" type="string"/>
+          <element name="RelatedDatasetID" type=":DataSetsPropertyType"/>
+          <element name="DataSetID" type=":DataSetsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RelatedDatasetsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":RelatedDatasets"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RelatedFeatures" substitutionGroup="gml:AbstractFeature" type=":RelatedFeaturesType"/>
+  <complexType name="RelatedFeaturesType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="RelationID" type="integer"/>
+          <element name="RelationshipTypeCV" type="string"/>
+          <element name="RelatedFeatureID" type=":SamplingFeaturesPropertyType"/>
+          <element name="SamplingFeatureID" type=":SamplingFeaturesPropertyType"/>
+          <element name="SpatialOffsetID" type=":SpatialOffsetsPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RelatedFeaturesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":RelatedFeatures"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RelatedResults" substitutionGroup="gml:AbstractFeature" type=":RelatedResultsType"/>
+  <complexType name="RelatedResultsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="RelatedResultSequenceNumber" type="integer"/>
+          <element name="RelationID" type="integer"/>
+          <element name="RelationshipTypeCV" type="string"/>
+          <element minOccurs="0" name="VersionCode" type="string"/>
+          <element name="ResultID" type=":ResultPropertyType"/>
+          <element name="RelatedResultID" type=":ResultPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RelatedResultsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":RelatedResults"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Result" substitutionGroup="gml:AbstractFeature" type=":ResultType"/>
+  <complexType name="ResultType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="IntendedObservationSpacing" type="string"/>
+          <element minOccurs="0" name="ResultDateTime" type="dateTime"/>
+          <element minOccurs="0" name="ResultDateTimeUTCOffset" type="integer"/>
+          <element name="ResultID" type="integer"/>
+          <element name="ResultTypeCV" type="string"/>
+          <element name="ResultUUID" type="string"/>
+          <element name="SampledMediumCV" type="string"/>
+          <element minOccurs="0" name="StatusCV" type="string"/>
+          <element minOccurs="0" name="ValidDateTime" type="dateTime"/>
+          <element minOccurs="0" name="ValidDateTimeUTCOffset" type="integer"/>
+          <element name="ValueCount" type="integer"/>
+          <element name="ProcessingLevelID" type=":ProcessingLevelsPropertyType"/>
+          <element name="FeatureActionID" type=":FeatureActionsPropertyType"/>
+          <element name="TaxonomicClassifierID" type=":TaxonomicClassifiersPropertyType"/>
+          <element name="UnitsID" type=":UnitsPropertyType"/>
+          <element name="VariableID" type=":VariablesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResultPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Result"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ResultAnnotations" substitutionGroup=":Annotations" type=":ResultAnnotationsType"/>
+  <complexType name="ResultAnnotationsType">
+    <complexContent>
+      <extension base=":AnnotationsType">
+        <sequence>
+          <element name="BeginDateTime" type="dateTime"/>
+          <element name="BridgeID" type="integer"/>
+          <element name="EndDateTime" type="dateTime"/>
+          <element name="ResultID" type=":ResultPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResultAnnotationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ResultAnnotations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ResultDerivationEquations" substitutionGroup="gml:AbstractFeature" type=":ResultDerivationEquationsType"/>
+  <complexType name="ResultDerivationEquationsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="ResultID" type=":ResultPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResultDerivationEquationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ResultDerivationEquations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ResultExtensionPropertyValues" substitutionGroup=":ExtensionProperties" type=":ResultExtensionPropertyValuesType"/>
+  <complexType name="ResultExtensionPropertyValuesType">
+    <complexContent>
+      <extension base=":ExtensionPropertiesType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="PropertyValue" type="string"/>
+          <element name="ResultID" type=":ResultPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResultExtensionPropertyValuesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ResultExtensionPropertyValues"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ResultValueAnnotations" substitutionGroup=":Annotations" type=":ResultValueAnnotationsType"/>
+  <complexType name="ResultValueAnnotationsType">
+    <complexContent>
+      <extension base=":AnnotationsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResultValueAnnotationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":ResultValueAnnotations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SamplingFeatureAnnotations" substitutionGroup=":Annotations" type=":SamplingFeatureAnnotationsType"/>
+  <complexType name="SamplingFeatureAnnotationsType">
+    <complexContent>
+      <extension base=":AnnotationsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="SamplingFeatureID" type=":SamplingFeaturesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SamplingFeatureAnnotationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":SamplingFeatureAnnotations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SamplingFeatureExtensionPropertyValues" substitutionGroup=":ExtensionProperties" type=":SamplingFeatureExtensionPropertyValuesType"/>
+  <complexType name="SamplingFeatureExtensionPropertyValuesType">
+    <complexContent>
+      <extension base=":ExtensionPropertiesType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="PropertyValue" type="string"/>
+          <element name="SamplingFeatureID" type=":SamplingFeaturesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SamplingFeatureExtensionPropertyValuesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":SamplingFeatureExtensionPropertyValues"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SamplingFeatureExternalIdentifiers" substitutionGroup=":ExternalIdentifierSystems" type=":SamplingFeatureExternalIdentifiersType"/>
+  <complexType name="SamplingFeatureExternalIdentifiersType">
+    <complexContent>
+      <extension base=":ExternalIdentifierSystemsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element minOccurs="0" name="SamplingFeatureExternalIdentiferURI" type="string"/>
+          <element name="SamplingFeatureExternalIdentifier" type="string"/>
+          <element name="SamplingFeatureID" type=":SamplingFeaturesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SamplingFeatureExternalIdentifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":SamplingFeatureExternalIdentifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SamplingFeatures" substitutionGroup="sam:SF_SamplingFeature" type=":SamplingFeaturesType"/>
+  <complexType name="SamplingFeaturesType">
+    <complexContent>
+      <extension base="sam:SF_SamplingFeatureType">
+        <sequence>
+          <element minOccurs="0" name="Elevation_m" type="double"/>
+          <element minOccurs="0" name="ElevationDatumcCV" type="string"/>
+          <element minOccurs="0" name="FeatureGeometry" type="gml:PointPropertyType"/>
+          <element name="SamplingFeatureCode" type="string"/>
+          <element minOccurs="0" name="SamplingFeatureDescription" type="string"/>
+          <element minOccurs="0" name="SamplingFeatureGeotypeCV" type="string"/>
+          <element name="SamplingFeatureID" type="integer"/>
+          <element minOccurs="0" name="SamplingFeatureName" type="string"/>
+          <element name="SamplingFeatureTypeCV" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SamplingFeaturesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":SamplingFeatures"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Sites" substitutionGroup="gml:AbstractFeature" type=":SitesType"/>
+  <complexType name="SitesType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="Latitude" type="double"/>
+          <element name="Longitude" type="double"/>
+          <element name="SiteTypeCV" type="string"/>
+          <element name="SamplingFeatureID" type=":SamplingFeaturesPropertyType"/>
+          <element name="LatLonDatumID" type=":SpatialReferencesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SitesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Sites"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpatialOffsets" substitutionGroup="gml:AbstractFeature" type=":SpatialOffsetsType"/>
+  <complexType name="SpatialOffsetsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="Offset1UnitID" type="integer"/>
+          <element name="Offset1Value" type="double"/>
+          <element minOccurs="0" name="Offset2UnitID" type="integer"/>
+          <element minOccurs="0" name="Offset2Value" type="double"/>
+          <element minOccurs="0" name="Offset3UnitID" type="integer"/>
+          <element minOccurs="0" name="Offset3Value" type="double"/>
+          <element name="SpatialOffsetID" type="integer"/>
+          <element name="SpatialOffsetTypeCV" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpatialOffsetsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":SpatialOffsets"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpatialReferenceExternalIdentifiers" substitutionGroup=":ExternalIdentifierSystems" type=":SpatialReferenceExternalIdentifiersType"/>
+  <complexType name="SpatialReferenceExternalIdentifiersType">
+    <complexContent>
+      <extension base=":ExternalIdentifierSystemsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="SpatialReferenceExternalIdentifier" type="string"/>
+          <element minOccurs="0" name="SpatialReferenceExternalIdentifierURI" type="string"/>
+          <element name="SpatialReferenceID" type=":SpatialReferencesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpatialReferenceExternalIdentifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":SpatialReferenceExternalIdentifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpatialReferences" substitutionGroup="gml:AbstractFeature" type=":SpatialReferencesType"/>
+  <complexType name="SpatialReferencesType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="SpatialReferenceID" type="integer"/>
+          <element minOccurs="0" name="SRSCode" type="string"/>
+          <element minOccurs="0" name="SRSDescription" type="string"/>
+          <element name="SRSName" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpatialReferencesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":SpatialReferences"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecimenTaxonomicClassifiers" substitutionGroup="gml:AbstractFeature" type=":SpecimenTaxonomicClassifiersType"/>
+  <complexType name="SpecimenTaxonomicClassifiersType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element minOccurs="0" name="CitationID" type="integer"/>
+          <element name="TaxonomicClassifierID" type=":TaxonomicClassifiersPropertyType"/>
+          <element name="SamplingFeatureID" type=":SpecimensPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecimenTaxonomicClassifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":SpecimenTaxonomicClassifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Specimens" substitutionGroup="gml:AbstractFeature" type=":SpecimensType"/>
+  <complexType name="SpecimensType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="IsFieldSpecimen" type="boolean"/>
+          <element name="SpecimenMediumCV" type="string"/>
+          <element name="SpecimenTypeCV" type="string"/>
+          <element name="SamplingFeatureID" type=":SamplingFeaturesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecimensPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Specimens"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="TaxonomicClassifierExternalIdentifiers" substitutionGroup=":ExternalIdentifierSystems" type=":TaxonomicClassifierExternalIdentifiersType"/>
+  <complexType name="TaxonomicClassifierExternalIdentifiersType">
+    <complexContent>
+      <extension base=":ExternalIdentifierSystemsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="TaxonomicClassifierExternalIdentifier" type="string"/>
+          <element minOccurs="0" name="TaxonomicClassifierExternalIdentifierURI" type="string"/>
+          <element name="TaxonomicClassifierID" type=":TaxonomicClassifiersPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TaxonomicClassifierExternalIdentifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":TaxonomicClassifierExternalIdentifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="TaxonomicClassifiers" substitutionGroup="gml:AbstractFeature" type=":TaxonomicClassifiersType"/>
+  <complexType name="TaxonomicClassifiersType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="TaxonomicClassifierCommonName" type="string"/>
+          <element minOccurs="0" name="TaxonomicClassifierDescription" type="string"/>
+          <element name="TaxonomicClassifierID" type="integer"/>
+          <element name="TaxonomicClassifierName" type="string"/>
+          <element name="TaxonomicClassifierTypeCV" type="string"/>
+          <element name="ParentTaxonomicClassifierID" type=":TaxonomicClassifiersPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TaxonomicClassifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":TaxonomicClassifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Units" substitutionGroup="gml:AbstractFeature" type=":UnitsType"/>
+  <complexType name="UnitsType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="UnitsAbbreviation" type="string"/>
+          <element name="UnitsID" type="integer"/>
+          <element name="UnitsName" type="string"/>
+          <element name="UnitsTypeCV" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UnitsPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Units"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="VariableExtensionPropertyValues" substitutionGroup=":ExtensionProperties" type=":VariableExtensionPropertyValuesType"/>
+  <complexType name="VariableExtensionPropertyValuesType">
+    <complexContent>
+      <extension base=":ExtensionPropertiesType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="PropertyValue" type="string"/>
+          <element name="VariableID" type=":VariablesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VariableExtensionPropertyValuesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":VariableExtensionPropertyValues"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="VariableExternalIdentifiers" substitutionGroup=":ExternalIdentifierSystems" type=":VariableExternalIdentifiersType"/>
+  <complexType name="VariableExternalIdentifiersType">
+    <complexContent>
+      <extension base=":ExternalIdentifierSystemsType">
+        <sequence>
+          <element name="BridgeID" type="integer"/>
+          <element name="VariableExternalIdentifer" type="string"/>
+          <element minOccurs="0" name="VariableExternalIdentifierURI" type="string"/>
+          <element name="VariableID" type=":VariablesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VariableExternalIdentifiersPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":VariableExternalIdentifiers"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Variables" substitutionGroup="gml:AbstractFeature" type=":VariablesType"/>
+  <complexType name="VariablesType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="NoDataValue" type="double"/>
+          <element minOccurs="0" name="SpeciationCV" type="string"/>
+          <element name="VariableCode" type="string"/>
+          <element minOccurs="0" name="VariableDefinition" type="string"/>
+          <element name="VariableID" type="integer"/>
+          <element name="VariableNameCV" type="string"/>
+          <element name="VariableTypeCV" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VariablesPropertyType">
+    <sequence minOccurs="0">
+      <element ref=":Variables"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>

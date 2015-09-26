@@ -1,0 +1,49 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//DataSets.json",
+	"title":"DataSets",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"DataSets"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"DataSetAbstract":{
+					"title":"DataSetAbstract",
+					"type":"string",
+					"required":true
+				},
+				"DataSetCode":{
+					"title":"DataSetCode",
+					"type":"string",
+					"required":true
+				},
+				"DataSetID":{
+					"title":"DataSetID",
+					"type":"integer",
+					"required":true
+				},
+				"DataSetTitle":{
+					"title":"DataSetTitle",
+					"type":"string",
+					"required":true
+				},
+				"DataSetTypeCV":{
+					"title":"DataSetTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"DataSetUUID":{
+					"title":"DataSetUUID",
+					"type":"string",
+					"required":true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//DataSetCitations.json",
+	"title":"DataSetCitations",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"DataSetCitations"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"BridgeID":{
+					"title":"BridgeID",
+					"type":"integer",
+					"required":true
+				},
+				"RelationshipTypeCV":{
+					"title":"RelationshipTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"CitationID":{
+					"title":"CitationID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"DataSetID":{
+					"title":"DataSetID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

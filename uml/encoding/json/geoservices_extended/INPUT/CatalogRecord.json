@@ -1,0 +1,37 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//CatalogRecord.json",
+	"title":"CatalogRecord",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"CatalogRecord"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"createdDate":{
+					"title":"createdDate",
+					"type":"string",
+					"format":"date-time",
+					"required":true
+				},
+				"updatedDate":{
+					"title":"updatedDate",
+					"type":"string",
+					"format":"date-time",
+					"required":true
+				},
+				"source":{
+					"title":"source",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

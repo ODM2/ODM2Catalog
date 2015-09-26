@@ -1,0 +1,41 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//RelatedCitations.json",
+	"title":"RelatedCitations",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"RelatedCitations"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"RelationID":{
+					"title":"RelationID",
+					"type":"integer",
+					"required":true
+				},
+				"RelationshipTypeCV":{
+					"title":"RelationshipTypeCV",
+					"type":"integer",
+					"required":true
+				},
+				"RelatedCitationID":{
+					"title":"RelatedCitationID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"CitationID":{
+					"title":"CitationID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//Citations.json",
+	"title":"Citations",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"Citations"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"CitationID":{
+					"title":"CitationID",
+					"type":"integer",
+					"required":true
+				},
+				"CitationLink":{
+					"title":"CitationLink",
+					"type":"string"
+				},
+				"PublicationYear":{
+					"title":"PublicationYear",
+					"type":"integer",
+					"required":true
+				},
+				"Publisher":{
+					"title":"Publisher",
+					"type":"string",
+					"required":true
+				},
+				"Title":{
+					"title":"Title",
+					"type":"string",
+					"required":true
+				}
+			}
+		}
+	}
+}

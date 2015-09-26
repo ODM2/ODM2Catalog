@@ -1,0 +1,47 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//RelatedFeatures.json",
+	"title":"RelatedFeatures",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"RelatedFeatures"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"RelationID":{
+					"title":"RelationID",
+					"type":"integer",
+					"required":true
+				},
+				"RelationshipTypeCV":{
+					"title":"RelationshipTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"RelatedFeatureID":{
+					"title":"RelatedFeatureID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"SamplingFeatureID":{
+					"title":"SamplingFeatureID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				},
+				"SpatialOffsetID":{
+					"title":"SpatialOffsetID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//Organizations.json",
+	"title":"Organizations",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"Organizations"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"OrganizationCode":{
+					"title":"OrganizationCode",
+					"type":"string",
+					"required":true
+				},
+				"OrganizationDescription":{
+					"title":"OrganizationDescription",
+					"type":"string"
+				},
+				"OrganizationID":{
+					"title":"OrganizationID",
+					"type":"integer",
+					"required":true
+				},
+				"OrganizationLink":{
+					"title":"OrganizationLink",
+					"type":"string"
+				},
+				"OrganizationName":{
+					"title":"OrganizationName",
+					"type":"string",
+					"required":true
+				},
+				"OrganizationTypeCV":{
+					"title":"OrganizationTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"ParentOrganizationID":{
+					"title":"ParentOrganizationID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

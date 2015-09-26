@@ -1,0 +1,44 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//ExtensionProperties.json",
+	"title":"ExtensionProperties",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"ExtensionProperties"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"PropertyDataTypeCV":{
+					"title":"PropertyDataTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"PropertyDescription":{
+					"title":"PropertyDescription",
+					"type":"string"
+				},
+				"PropertyID":{
+					"title":"PropertyID",
+					"type":"integer",
+					"required":true
+				},
+				"PropertyName":{
+					"title":"PropertyName",
+					"type":"string",
+					"required":true
+				},
+				"PropertyUnitsID":{
+					"title":"PropertyUnitsID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}

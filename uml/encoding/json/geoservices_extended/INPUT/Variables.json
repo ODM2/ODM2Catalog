@@ -1,0 +1,52 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//Variables.json",
+	"title":"Variables",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"Variables"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"NoDataValue":{
+					"title":"NoDataValue",
+					"type":"number",
+					"required":true
+				},
+				"SpeciationCV":{
+					"title":"SpeciationCV",
+					"type":"string"
+				},
+				"VariableCode":{
+					"title":"VariableCode",
+					"type":"string",
+					"required":true
+				},
+				"VariableDefinition":{
+					"title":"VariableDefinition",
+					"type":"string"
+				},
+				"VariableID":{
+					"title":"VariableID",
+					"type":"integer",
+					"required":true
+				},
+				"VariableNameCV":{
+					"title":"VariableNameCV",
+					"type":"string",
+					"required":true
+				},
+				"VariableTypeCV":{
+					"title":"VariableTypeCV",
+					"type":"string",
+					"required":true
+				}
+			}
+		}
+	}
+}

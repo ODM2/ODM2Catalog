@@ -1,0 +1,41 @@
+{
+	"$schema":"http://json-schema.org/draft-03/schema#",
+	"id":"FIXME//Specimens.json",
+	"title":"Specimens",
+	"type":"object",
+	"properties":{
+		"entityType":{
+			"title":"feature/object type",
+			"type":"string",
+			"default":"Specimens"
+		},
+		"attributes":{
+			"title":"feature attributes",
+			"type":"object",
+			"properties":{
+				"IsFieldSpecimen":{
+					"title":"IsFieldSpecimen",
+					"type":"string",
+					"enum":["zero","one"],
+					"required":true
+				},
+				"SpecimenMediumCV":{
+					"title":"SpecimenMediumCV",
+					"type":"string",
+					"required":true
+				},
+				"SpecimenTypeCV":{
+					"title":"SpecimenTypeCV",
+					"type":"string",
+					"required":true
+				},
+				"SamplingFeatureID":{
+					"title":"SamplingFeatureID",
+					"type":"string",
+					"format":"uri",
+					"required":true
+				}
+			}
+		}
+	}
+}
